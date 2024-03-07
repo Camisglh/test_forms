@@ -1,3 +1,7 @@
+cd test_forms
+
+Для запуска
+
 1 Создайте виртуальное окружение и активируйте его
 
 python -m venv venv
@@ -14,19 +18,16 @@ source venv/bin/activate
 
 pip install -r requirements.txt
 
-3 Перейдите в нужную директорию 
 
-cd src
-
-4 Примените миграции
+3 Примените миграции
 
 python manage.py migrate
 
-5 Создайте админа
+4 Создайте админа
 
 python manage.py createsuperuser
 
-6 Создайте файл .env
+5 Создайте файл .env
 
 touch .env
 
@@ -34,7 +35,7 @@ touch .env
 SECRET_KEY="django-insecure-yymv3d4nhjws9k5ak0^di^5@1j-@351qcac_jmsmup)h^ly)4z"
 
 
-7 Запустите сервер 
+6 Запустите сервер 
 
 python manage.py runserver
 
