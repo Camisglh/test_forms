@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+<div class="card-container">
+    <h1>Опросы</h1>
+    <div class="card-list">
+        {% for poll in polls %}
+        <div class="card">
+            {% if poll.first_question_id %}
+            <a href="{% url 'show_question' poll.id poll.first_question_id %}">
+                <h2>{{ poll.name }}</h2>
+            </a>
+            {% else %}
+            <span>{{ poll.name }} (Этот опрос пока в разработке)</span>
+            {% endif %}
+        </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

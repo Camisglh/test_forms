@@ -1,0 +1,50 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #ffffff; 
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 400px;
+    width: 90%;
+    margin: 20px auto;
+}
+
+.card h2 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 10px; 
+    border: 1px solid #ccc; 
+    border-radius: 5px;
+    color: #333; 
+    box-sizing: border-box; 
+}
+
+
+.card input[type="text"],
+.card select {
+    width: calc(100% - 20px); 
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+  }
+
+.card button {
+    padding: 10px 20px;
+    background-color: #007bff; 
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.card button:hover {
+    background-color: #0056b3; 
+  }

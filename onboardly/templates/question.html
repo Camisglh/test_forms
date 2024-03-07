@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'styles.css' %}">
+
+<div class="card">
+    <form method="post">
+        {% csrf_token %}
+        <h2>{{ question.text }}</h2>
+        {% if answer_type == 'text' %}
+        <input type="text" name="text_answer" id="text_answer" required>
+        <input type="hidden" name="answer_id" value="">
+        {% elif answer_type == 'option' %}
+        <select name="answer_id" id="answer_id" required>
+            {% for answer in answer_set %}
+                <option value="{{ answer.id }}">{{ answer.text }}</option>
+            {% endfor %}
+        </select>
+        {% endif %}
+        <button type="submit">Отправить</button>
+    </form>
+</div>
+{% endblock %}

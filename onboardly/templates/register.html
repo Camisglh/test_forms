@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}  
+
+{% block content %}
+<link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+<div class="card">
+    <h2>Пожалуйста пройдите регистрацию перед тем как проходить опросы</h2>
+    <form method="post">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="id_username">Логин:</label>
+            {{ form.username }}
+        </div>
+        <div class="form-group">
+            <label for="id_password1">Пароль:</label>
+            {{ form.password1 }}
+        </div>
+        <div class="form-group">
+            <label for="id_password2">Повторите пароль:</label>
+            {{ form.password2 }}
+        </div>
+        <button type="submit">Отправить</button>
+    </form>
+    <div class="help-text">
+        <p>Используйте буквы, цифры и символы @ . + - _ для логина.</p>
+        <p>Пароль должен содержать как минимум 8 символов, включая цифры и буквы.</p>
+        <p>Для подтверждения введите, пожалуйста, пароль ещё раз.</p>
+        <a>Уже зарегистрированы? <a href="{% url 'login' %}">Войти</a>
+    </div>
+</div>
+{% endblock %}

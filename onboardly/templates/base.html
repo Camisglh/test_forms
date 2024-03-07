@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Main site</title>
+
+{% load static %}  
+  <link rel="stylesheet" type="text/css" href="{% static 'base.css' %}">
+</head>
+<body>
+  <main>
+    {% block content %}
+
+    {% endblock %}
+  </main>
+</body>
+</html>
+

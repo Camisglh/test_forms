@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<div class="card">
+<link rel="stylesheet" type="text/css" href="{% static 'register.css' %}">
+  <h2>Вход</h2>
+  <form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Отправить</button>
+  </form>
+  <a>Нет аккаунта? <a href="{% url 'register' %}">Зарегистрироваться</a>
+</div>
+{% endblock %}
